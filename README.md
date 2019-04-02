@@ -1,5 +1,7 @@
 # crc
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/coltongit/node-crc.svg)](https://greenkeeper.io/)
+
 The module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Browser.
 
 ## Features
