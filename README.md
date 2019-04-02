@@ -10,8 +10,11 @@ The module for calculating Cyclic Redundancy Check (CRC) for Node.js and the Bro
 - Provides CRC tables for optimized calculations.
 - Provides support for the following CRC algorithms:
   - CRC1 (`crc1`)
+  - CRC5 (`crc5`)
   - CRC8 (`crc8`)
   - CRC8 1-Wire (`crc81wire`)
+  - CRC12 3-GPP (`crc123gpp`)
+  - CRC15 (`crc15`)
   - CRC16 (`crc16`)
   - CRC16 CCITT (`crc16ccitt`)
   - CRC16 Modbus (`crc16modbus`)
