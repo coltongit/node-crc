@@ -1,4 +1,6 @@
-import { Buffer } from 'buffer';
+import {
+  Buffer
+} from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
@@ -25,14 +27,14 @@ let TABLE = [
 
 if (typeof Int32Array !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crc5 = defineCrc('crc-5', function(buf, previous) {
+const crc5 = defineCrc('crc-5', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
 
   for (let index = 0; index < buf.length; index++) {
     const byte = buf[index];
-    crc = TABLE[(crc ^ byte) & 0x1f] & 0x1f;
+    crc = TABLE[((crc >> 8) ^ byte) & 0x1f] & 0x1f;
   }
 
   return crc;

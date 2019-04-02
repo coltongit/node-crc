@@ -1,4 +1,6 @@
-import { Buffer } from 'buffer';
+import {
+  Buffer
+} from 'buffer';
 import createBuffer from './create_buffer';
 import defineCrc from './define_crc';
 
@@ -38,17 +40,17 @@ let TABLE = [
   0x660, 0xe6f, 0xe71, 0x67e, 0xe4d, 0x642, 0x65c, 0xe53,
   0xe35, 0x63a, 0x624, 0xe2b, 0x618, 0xe17, 0xe09, 0x606
 ];
-  
+
 if (typeof Int32Array !== 'undefined') TABLE = new Int32Array(TABLE);
 
-const crc123gpp = defineCrc('crc-12-3gpp', function(buf, previous) {
+const crc123gpp = defineCrc('crc-12-3gpp', function (buf, previous) {
   if (!Buffer.isBuffer(buf)) buf = createBuffer(buf);
 
   let crc = ~~previous;
 
   for (let index = 0; index < buf.length; index++) {
     const byte = buf[index];
-    crc = (TABLE[((crc >> 4) ^ byte) & 0xff] ^ (crc << 8)) & 0xfff;
+    crc = (TABLE[((crc >> 4) ^ byte) & 0xff] ^ (crc << 8));
   }
 
   return crc;
