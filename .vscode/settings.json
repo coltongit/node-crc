@@ -1,5 +1,7 @@
 {
-  "favorites.sortDirection": "ASC",
-  "favorites.groupsFirst": true,
-  "editor.formatOnSave": true
+    "favorites.sortDirection": "ASC",
+    "favorites.groupsFirst": true,
+    "editor.formatOnSave": true,
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false
 }
