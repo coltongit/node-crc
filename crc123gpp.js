@@ -50,7 +50,7 @@ const crc123gpp = defineCrc('crc-12-3gpp', function (buf, previous) {
 
   for (let index = 0; index < buf.length; index++) {
     const byte = buf[index];
-    crc = (TABLE[((crc >> 4) ^ byte) & 0xff] ^ (crc << 8));
+    crc = (TABLE[((crc >> 4) ^ byte) & 0xff] ^ (crc << 8) & 0xfff) & 0xfff;
   }
 
   return crc;
